@@ -1,14 +1,14 @@
 # CBERSFuse
 QGIS plugin for batch RGB composition and pansharpening of CBERS-4A/WPM imagery
 CBERSFuse — plugin para QGIS
-Versão do plugin: 1.0.1. Rotina incorporada: 2.2.0.
+Versão do plugin: 1.0.4. Rotina incorporada: 2.2.0.
 
 Destinado ao QGIS 4.0.x / Qt6, incluindo o QGIS 4.0.3.
 Desenvolvedor: Esdras Andrade, do Instituto de Geografia, Desenvolvimento e Meio Ambiente da UFAL.
 Instalação
 1.	No QGIS, abra Complementos → Gerenciar e Instalar Complementos.
 2.	Escolha Instalar a partir de ZIP.
-3.	Selecione CBERSFuse_QGIS4_v1.0.1.zip, sem descompactar.
+3.	Selecione CBERSFuse_QGIS4_v1.0.4.zip, sem descompactar.
 4.	Clique em Instalar Complemento e ative CBERSFuse.
 O acesso aparece em Raster → CBERSFuse → Composição RGB + fusão PAN,
 
