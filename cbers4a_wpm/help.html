@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBERSFuse — Ajuda</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:850px;margin:40px auto;padding:0 24px;color:#193442;background:#f7fafb}h1,h2{line-height:1.25}h1{color:#126174}table{width:100%;border-collapse:collapse;background:white}td,th{padding:10px;text-align:left;border-bottom:1px solid #dce5e9}code{font-size:.92em;background:#e9eff2;padding:2px 5px}li{margin:6px 0}.note{border-left:4px solid #126174;padding:10px 16px;background:#eaf4f5}</style></head>
+<body>
+<h1>CBERSFuse</h1><p>Composição RGB e fusão pancromática em lote no QGIS 4.</p>
+<p><strong>Desenvolvedor:</strong> Esdras Andrade, do Instituto de Geografia, Desenvolvimento e Meio Ambiente da UFAL.</p>
+<h2>Instalação</h2>
+<ol><li>Abra <strong>Complementos → Gerenciar e Instalar Complementos → Instalar a partir de ZIP</strong>.</li>
+<li>Selecione <code>CBERSFuse_QGIS4_v1.0.1.zip</code>, sem descompactar.</li>
+<li>Instale e ative <strong>CBERSFuse</strong>.</li></ol>
+<p>A ferramenta fica no menu <strong>Raster → CBERSFuse</strong>, na barra de ferramentas e na Caixa de Ferramentas de Processamento.</p>
+<h2>Como executar</h2>
+<ol><li>Abra <strong>Composição RGB + fusão PAN</strong>.</li>
+<li>Indique a pasta das cinco bandas descompactadas e uma nova pasta de saída.</li>
+<li>Mantenha <strong>R=B3, G=B2 e B=B1</strong> para cor natural; para falsa cor, selecione <strong>R=B4, G=B3 e B=B2</strong>.</li>
+<li>Clique em <strong>Executar</strong>. A imagem RGB + PAN será adicionada ao projeto se o carregamento estiver marcado.</li></ol>
+<p>Os arquivos devem terminar em <code>_BAND0.tif</code> a <code>_BAND4.tif</code>, com o mesmo prefixo <code>CBERS_4A_WPM_...</code>, dentro da mesma pasta. A busca em subpastas é opcional.</p>
+<h2>Produtos</h2>
+<table><thead><tr><th>Produto</th><th>Pixel</th><th>Adicionado ao projeto</th></tr></thead><tbody>
+<tr><td>Empilhamento B1/B2/B3/B4</td><td>8 m</td><td>Não</td></tr>
+<tr><td>Composição RGB</td><td>8 m</td><td>Não</td></tr>
+<tr><td>Composição RGB + PAN</td><td>2 m</td><td>Sim, se solicitado</td></tr></tbody></table>
+<p>Os três produtos são salvos como GeoTIFF, com estilos <code>.qml</code>. A aparência é definida pelo padrão do QGIS. Não existem campos de referência ou percentis de contraste.</p>
+<h2>Condições de uso</h2>
+<p>As quatro bandas multiespectrais precisam estar na mesma grade. Todas as bandas devem usar o mesmo SRC projetado em metros, com metadados de tipo de dados e NoData compatíveis. A validação não comprova o corregistro. Recomenda-se produto L4.</p>
+<p>A fusão usa Weighted Brovey do GDAL, com as quatro MS e pesos iguais padrão, seguida de seleção RGB. Para índices espectrais e análises quantitativas, conserve os dados originais. O produto de 2 m não equivale a uma aquisição de 0,5 m.</p>
+<h2>Se algo impedir a execução</h2>
+<ul><li><strong>GDAL indisponível:</strong> ative o complemento Processamento e seu provedor GDAL.</li>
+<li><strong>Saída existente:</strong> selecione uma nova pasta; os produtos não são sobrescritos.</li>
+<li><strong>Permissão no Flatpak:</strong> selecione pastas acessíveis pelo próprio QGIS.</li>
+<li><strong>Cena incompleta ou incompatível:</strong> consulte os avisos e o registro JSON salvo na saída.</li></ul>
+<p class="note">Plugin 1.0.1, rotina 2.2.0. Sintaxe, estrutura e ciclo de ativação verificados em testes simulados. A instalação e a execução da versão 1.0.0 foram confirmadas pelo usuário. A atualização 1.0.1 altera o nome e os textos de apresentação e ajuda.</p>
+<p><a href="README.md">Documentação e estrutura do código</a></p>
+</body></html>

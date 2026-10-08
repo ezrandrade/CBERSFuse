@@ -1,0 +1,19 @@
+[general]
+name=CBERSFuse
+description=Batch RGB composition and pansharpening of CBERS-4A/WPM imagery.
+about=Developed by Esdras Andrade, Instituto de Geografia, Desenvolvimento e Meio Ambiente, UFAL. Processes CBERS-4A/WPM scenes, generating an 8 m multispectral stack, an 8 m RGB composition and a 2 m pansharpened RGB image. Requires QGIS 4, Processing and the GDAL provider. The interface and user instructions are in Portuguese.
+version=1.0.2
+qgisMinimumVersion=4.0
+qgisMaximumVersion=4.99
+author=Esdras Andrade
+email=esdras.andrade@igdema.ufal.br
+repository=https://github.com/ezrandrade/CBERSFuse
+category=Raster
+icon=icon.png
+experimental=False
+deprecated=False
+hasProcessingProvider=True
+server=False
+tags=cbers,raster,pansharpening,remote sensing,rgb
+changelog=1.0.1 - Nome CBERSFuse e identificação do desenvolvedor na ajuda, seguida das instruções de uso.
+    1.0.0 - Estrutura inicial do plugin para QGIS 4, baseada na rotina 2.2.0 validada pelo usuário.
